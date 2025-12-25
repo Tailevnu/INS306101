@@ -75,7 +75,7 @@ CREATE TABLE Notifications (
     NotiID INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     user_id INT NOT NULL,
     message TEXT NOT NULL,
-    isRead INT NOT NULL,
+    isRead BOOLEAN DEFAULT FALSE,
     createdAt DATETIME NOT NULL,
     booking_id BIGINT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
@@ -91,3 +91,4 @@ CREATE TABLE BookingLogs (
     booking_id BIGINT NOT NULL,
     FOREIGN KEY (booking_id) REFERENCES Bookings(booking_id)
 );
+
